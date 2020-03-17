@@ -1,5 +1,5 @@
-from PAD338.Sorteador import sortear_palavra
-from PAD338.PesquisarLetra import Pesquisar
+from PAD338.Arquivos.Sorteador import sortear_palavra
+from PAD338.Arquivos.PesquisarLetra import Pesquisar
 
 
 class JogoForca:
