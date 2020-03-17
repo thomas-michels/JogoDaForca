@@ -1,4 +1,4 @@
-from PAD338.Arquivos.Palavras import Palavras
+from Arquivos.Palavras import Palavras
 from random import randint
 
 

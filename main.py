@@ -1,4 +1,4 @@
-from PAD338.Arquivos.JogoForca import JogoForca
+from Arquivos.JogoForca import JogoForca
 
 
 def jogar():
