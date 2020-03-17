@@ -15,15 +15,7 @@ class JogoForca:
     def __diminuir_vidas(self) -> None:
         self.__vidas -= 1
 
-    def __transformar_list(self, valor) -> list:
-        lista = []
-        for i in valor:
-            lista.append(i)
-
-        return lista
-
     def __validar_vidas(self) -> bool:
-
         if self.__vidas < 1:
             self.__status_game = False
             return False
@@ -31,7 +23,7 @@ class JogoForca:
         return True
 
     def __validar_jogada(self, letras) -> bool:
-        novas_letras = self.__transformar_list(letras)
+        novas_letras = list(letras)
         jogada = self.__pesquisador.procurar_letra(novas_letras)
 
         if len(novas_letras) > 1 and len(novas_letras) != len(self.__palavra):
