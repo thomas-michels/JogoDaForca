@@ -4,19 +4,18 @@ from Arquivos.PesquisarLetra import Pesquisar
 
 class JogoForca:
 
-    def __init__(self):
-        self.__palavra = sortear_palavra()
-        self.__pesquisador = Pesquisar(self.__palavra)
-        self.__vidas = 5
-        self.__status_game = None
+    __palavra = sortear_palavra()
+    __pesquisador = Pesquisar(__palavra)
+    __vidas = 5
+    __status_game = None
 
-    def get_status_game(self):
+    def get_status_game(self) -> bool:
         return self.__status_game
 
-    def __diminuir_vidas(self):
+    def __diminuir_vidas(self) -> None:
         self.__vidas -= 1
 
-    def __transformar_list(self, valor):
+    def __transformar_list(self, valor) -> list:
         lista = []
         for i in valor:
             lista.append(i)
@@ -31,7 +30,7 @@ class JogoForca:
 
         return True
 
-    def __validar_jogada(self, letras):
+    def __validar_jogada(self, letras) -> bool:
         novas_letras = self.__transformar_list(letras)
         jogada = self.__pesquisador.procurar_letra(novas_letras)
 
@@ -52,11 +51,11 @@ class JogoForca:
 
         return True
 
-    def jogar(self):
+    def jogar(self) -> bool:
         if self.__validar_vidas():
             print(f'Vidas Restantes: {self.__vidas}')
             print(self.__pesquisador.retornar_palavra())
-            letras = input("Insira uma letra ou a palavra: ").lower()
+            letras = input('Insira uma letra ou a palavra: ').lower()
             if self.__validar_jogada(letras):
                 return True
 
